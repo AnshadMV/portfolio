@@ -12,6 +12,57 @@ h3 {
 div {
   font-family: 'Baloo Paaji 2', cursive;
 }
+/* Smooth transitions for all sections */
+section {
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Specific section transitions */
+#home, 
+#aboutme, 
+#skills, 
+#promo-cards, 
+#Services, 
+#contactsec {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Header transition */
+header {
+    transition: all 0.4s ease-in-out;
+}
+
+/* Project cards transition */
+.category-card {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Service cards transition */
+.service-card {
+    transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+/* Hover effects */
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(243, 91, 4, 0.05);
+}
+
+/* Scroll-triggered animations */
+section:not(:first-child) {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 #btn_contact {
   border: #f35b04 1px solid;

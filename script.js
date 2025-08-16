@@ -50,3 +50,20 @@ document.addEventListener('DOMContentLoaded', function() {
   
   cards.forEach(card => observer.observe(card));
 });
+
+
+
+// Scroll-triggered section animations
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section:not(:first-child)');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    sections.forEach(section => observer.observe(section));
+});
